@@ -9,8 +9,6 @@ export class MailController {
 
   @MessagePattern({ cmd: 'send_email' })
   sendEmail(data: EmailDto) {
-    console.log('fjasdiofas');
-
-    this.queueService.sendEmail(data);
+    return this.queueService.sendEmail(data);
   }
 }

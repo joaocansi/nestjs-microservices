@@ -7,7 +7,7 @@ import { EmailDto } from 'src/common/email';
 export class QueueService {
   constructor(@InjectQueue('email') private emailQueue: Queue) {}
 
-  sendEmail(data: EmailDto) {
+  async sendEmail(data: EmailDto) {
     this.emailQueue.add('email', data, {
       attempts: 2,
     });
